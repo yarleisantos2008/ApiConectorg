@@ -1,0 +1,381 @@
+:root {
+  --accent: #e3a12a;
+  --accent-hover: #ffcc00;
+  --primary-bg: #163768;
+  --light-bg: #f8f8f9;
+  --card-bg: #ffffff;
+  --text-color: #ffffff;
+  --muted: #666;
+  --radius: 12px;
+  --transition: all 0.3s ease;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+
+
+
+/* ======== ESTILO GERAL ======== */
+body {
+  font-family: "Poppins", sans-serif;
+
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+
+
+p {
+  text-align: justify;
+}
+
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================
+   NAVEGAÇÃO
+========================== */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: #163768;
+  padding: 0;
+  /* REMOVIDO o padding que criava o espaço */
+  margin: 0;
+  /* garante que não haja espaçamento externo */
+  height: 100px;
+  /* altura perfeita do menu */
+}
+
+
+nav ul li a {
+  color: #c28f00;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: .5s ease;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+
+}
+
+
+nav a::after {
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #ffcc00;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ==========================
+   LOGO
+========================== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.logo img {
+  width: 110px;
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+
+/* ======== CABEÇALHO ======== */
+.cabecalho {
+  background: linear-gradient(90deg, #FFBF00, #ffd105);
+  color: #fff;
+  text-align: center;
+  padding: 20px 20px;
+    
+}
+
+.cabecalho .logo {
+  width: 120px;
+  border-radius: 50%;
+}
+
+.cabecalho h1 {
+  margin: 10px 0 5px;
+  font-size: 2.5em;
+}
+
+
+
+/* ======== SEÇÕES ======== */
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+section h2 {
+  color: #c28f00;
+  border-bottom: 3px solid #ffb300;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #ffb300;
+  margin: 40px auto;
+  width: 80%;
+}
+
+/*BOTAO FORMULARIO*/
+.botao-formulario {
+  /* Remove o sublinhado padrão dos links */
+  text-decoration: none;
+
+  /* Adiciona cor de fundo */
+  background-color: #007bff;
+  /* Um azul amigável, personalize como quiser */
+
+  /* Adiciona cor ao texto */
+  color: white;
+
+  /* Adiciona preenchimento (padding) para dar forma de botão */
+  padding: 10px 20px;
+
+  /* Arredonda as bordas */
+  border-radius: 5px;
+
+  /* Muda o cursor para uma "mãozinha" ao passar por cima */
+  cursor: pointer;
+
+  /* Opcional: Adiciona transição suave para efeitos de hover */
+  transition: background-color 0.3s ease;
+
+  /* Garante que o link se comporte como um bloco para que padding funcione bem */
+  display: inline-block;
+}
+
+/* Efeito ao passar o mouse (hover) */
+.botao-formulario:hover {
+  background-color: #0056b3;
+  /* Uma cor ligeiramente mais escura no hover */
+}
+
+
+
+
+
+/* ======== CONTAINERS DE MEMBROS ======== */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 30px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+.imagem-container {
+  flex: 1;
+  text-align: center;
+  background: #fff5cc;
+}
+
+.imagem-container img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.conteudo-texto-lista {
+  flex: 2;
+  padding: 20px;
+}
+
+.conteudo-texto-lista h3 {
+  color: #ff8c00;
+  margin-top: 0;
+}
+
+.conteudo-texto-lista ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.conteudo-texto-lista li {
+  padding: 5px 0;
+  font-size: 1.05em;
+}
+
+/* ======== BENEFÍCIOS / CARDS ======== */
+.beneficios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+}
+
+.card {
+  position: relative;
+  width: 340px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-content {
+  background-color: #ffa800;
+  color: #fff;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-content p {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ======== BOTÃO FINAL ======== */
+.botao-final {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  z-index: 1000;
+}
+
+.botao-final.visible {
+  display: block;
+}
+
+/* ======== FORMULÁRIO ======== */
+.form-container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.form-container h2 {
+  color: #ffb300;
+  margin-bottom: 20px;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+  border-color: #ffb300;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 179, 0, 0.5);
+}
+
+.botao-apiconnect {
+  background-color: #ffb300;
+  color: white;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.botao-apiconnect:hover {
+  background-color: #e6a100;
+  transform: scale(1.03);
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    width: 90%;
+    padding: 25px;
+  }
+}
+
+/* ======== RODAPÉ ======== */
+.rodape {
+  background-color: #ffb300;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9em;
+}

@@ -1,0 +1,909 @@
+/* ==========================
+   VARIÁVEIS GLOBAIS
+========================== */
+:root {
+  --accent: #e3a12a;
+  --accent-hover: #ffcc00;
+  --primary-bg: #163768;
+  --light-bg: #f8f8f9;
+  --card-bg: #ffffff;
+  --text-color: #ffffff;
+  --muted: #666;
+  --radius: 12px;
+  --transition: all 0.3s ease;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+
+
+/* ======== CABEÇALHO ======== */
+.cabecalho {
+  background: linear-gradient(90deg, #FFBF00, #ffd105);
+  color: #fff;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.cabecalho .logo {
+  width: 120px;
+  border-radius: 50%;
+}
+
+.cabecalho h1 {
+  margin: 10px 0 5px;
+  font-size: 2.5em;
+}
+
+.slogan {
+  color: #ffffff;
+}
+/* ==========================
+   RESETA E BASE
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+.body-index {
+  height: 100%;
+  color: var(--text-color);
+  line-height: 1.45;
+}
+
+
+
+
+/* Imagem de fundo com overlay escuro */
+.body-index::before {
+  content: "";
+  position: absolute;
+  /* troque de fixed para absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px;
+  /* defina até onde quer que a imagem apareça */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('CAPA-APICULTURA.jpg')
+ center/cover no-repeat;
+  z-index: -1;
+}
+
+/* ==========================
+   CONTAINERS E ESTRUTURA
+========================== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================
+   NAVEGAÇÃO
+========================== */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: #163768;
+  padding: 0;
+  /* REMOVIDO o padding que criava o espaço */
+  margin: 0;
+  /* garante que não haja espaçamento externo */
+  height: 100px;
+  /* altura perfeita do menu */
+}
+
+
+nav ul li a {
+  color: #c28f00;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: .5s ease;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+
+}
+
+
+nav a::after {
+  
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #ffcc00;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ==========================
+   LOGO
+========================== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 14px;
+  margin-left: 10px;
+}
+
+.logo img {
+  width: 110px;
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+/* ==========================
+   TÍTULOS E TEXTOS
+========================== */
+h1 {
+  color: #fff;
+}
+
+h4 {
+  color: #ffda33;
+}
+
+p {
+  color: #ffffff;
+}
+
+
+
+
+
+
+.saiba-mais {
+  background: #ffcc00;
+  color: #ffffff;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+}
+
+.saiba-mais:hover {
+  background: #e3a100;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+}
+
+.saiba-mais:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+}
+
+.linha-botao-hex {
+  display: flex;
+  gap: 370px;
+  margin-top: 25px;
+}
+.img-saiba {
+  width: 80px;
+  max-width: 100%;
+}
+
+
+
+.saiba-produtor {
+  background: #ffcc00;
+  color: #ffffff;
+  padding: 9px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+  margin-top: 20px;
+}
+
+.saiba-produtor:hover {
+  background: #e3a100;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+}
+
+.saiba-produtor:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+}
+
+
+
+.saiba-vender {
+  background: #ffcc00;
+  color: #ffffff;
+  padding: 9px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+  margin-top: 20px;
+}
+
+.saiba-vender:hover {
+  background: #e3a100;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+}
+
+.saiba-vender:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+}
+
+
+
+/* ==========================
+   SEÇÃO DE PRODUTOS / FEATURES
+========================== */
+.produtos-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 90px auto;      /* ✅ Centraliza o bloco */
+  padding: 0;     /* ✅ Espaço nas laterais */
+}
+
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin: 2rem 0;
+}
+
+.features h3 {
+  color: #000;
+}
+
+.features p {
+  color: #eee;
+}
+
+/* ==========================
+   CARDS — SEM IMAGEM & TRANSPARENTES
+========================== */
+.card-1,
+.card-2 {
+  position: relative;
+  width: 270px;
+  height: 350px;
+  border-radius: 12px;
+  padding: 1rem;
+  color: #fff;
+
+  /* ✅ Fundo translúcido igual à segunda imagem */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* ✅ borda suave */
+}
+
+/* ✅ Remove COMPLETAMENTE as imagens */
+.card-1,
+.card-2 {
+  background-image: none !important;
+}
+
+/* Efeito hover */
+.card-1:hover,
+.card-2:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Ícones dentro dos cards */
+.icon-img {
+  width: 70px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.Apicultura-italia p{
+  color: #000;
+}
+
+/* ==========================
+   CARROSSEL
+========================== */
+/* Container */
+.carousel-container {
+  position: relative;
+  width: 900px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* Slides */
+.carousel {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 300px;   /* ✅ TAMANHO REDUZIDO */
+  object-fit: cover;
+  display: block;
+}
+
+/* Botões */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 50%;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .produtos-section {
+    flex-direction: column;
+  }
+
+  .carousel-container {
+    max-width: 100%;
+  }
+
+  .card-1,
+  .card-2 {
+    width: 90%;
+    height: 300px;
+  }
+}
+
+
+
+
+
+/* ========================== 
+   VARIÁVEIS GLOBAIS
+========================== */
+:root {
+  --accent: #e3a12a;
+  --accent-hover: #ffcc00;
+  --primary-bg: #163768;
+  --light-bg: #f8f8f9;
+  --card-bg: #ffffff;
+  --text-color: #ffffff;
+  --muted: #666;
+  --radius: 12px;
+  --transition: all 0.3s ease;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ==========================
+   RESET E BASE
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  color: var(--text-color);
+  line-height: 1.45;
+}
+
+/* Imagem de fundo com overlay escuro */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 960px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("file:///C:/Users/Cliente/Desktop/ApiConect/CAPA-APICULTURA.jpg") center/cover no-repeat;
+  z-index: -1;
+}
+
+
+
+/* ==========================
+   TÍTULOS E TEXTOS
+========================== */
+h1 {
+  color: #fff;
+}
+
+h4 {
+  color: #ffda33;
+}
+
+p {
+  color: #ffffff;
+}
+
+/* ==========================
+   SEÇÃO PRODUTOS / FEATURES
+========================== */
+.produtor-card {
+  display: flex;
+  gap: 25px;
+  margin-top: 40px;
+  justify-content: flex-start;
+  /* Mantém tudo no lado ESQUERDO */
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 0;
+  /* Garante que nada fique deslocado */
+
+}
+
+.text-card1,
+.text-card2 {
+  color: #dab009;
+}
+
+/* ==========================
+   CARDS
+========================== */
+.card-1,
+.card-2 {
+  position: relative;
+  width: 270px;
+  height: 350px;
+  border-radius: 12px;
+  padding: 1rem;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: var(--transition);
+}
+
+
+.card-1:hover,
+.card-2:hover {
+  transform: translateY(-10px);
+}
+
+.icon-img {
+  width: 70px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* ======= FAZ OS 3 DIVS FICAREM EM LINHA HORIZONTAL ======= */
+.linha-horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 70px;
+  top: 50%;
+}
+
+
+/* TEXTO — lado esquerdo */
+.texto-carrussel {
+  flex: 1;
+  max-width: 30%;
+  font-size: 23px;
+  
+  
+}
+
+.pts-rg{
+
+color: #FFBF00;
+
+}
+
+.API-PI {
+  color: #000;
+  
+}
+/* PARÁGRAFO — meio */
+.Apicultura-italia {
+  flex: 1;
+  max-width: 30%;
+}
+
+/* CARROSSEL — lado direito */
+.carousel-container {
+  flex: 1;
+  max-width: 40%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  margin: 0;
+}
+
+/* Slides */
+.carousel {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;     /* ✅ ESSENCIAL — agora todos os slides aparecem */
+}
+
+.slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .produtos-section {
+    flex-direction: column;
+  }
+
+  .carousel-container {
+    max-width: 100%;
+  }
+
+  .card-1,
+  .card-2 {
+    width: 90%;
+    height: 300px;
+  }
+}
+
+.produtos {
+  color: #ffda33;
+}
+
+.api {
+  color: #000000;
+  text-shadow: 2px 2px 4px #858585;
+}
+
+.nosso {
+  color: #666;
+}
+
+
+
+
+.img-vdo {
+  width: 100%;
+  height: 500px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('nos.png') center/cover no-repeat;
+  z-index: -1;
+  margin-bottom: 200px; /* 👈 Espaço entre a imagem e o footer */
+  margin-top: 200px;
+}
+
+.card-mariano {
+  margin-top: 60px;
+  margin-left: 200px;
+  position: relative;
+  width: 270px;
+  height: 350px;
+  border-radius: 12px;
+  padding: 1rem;
+  color: #fff;
+
+  /* ✅ Fundo translúcido igual à segunda imagem */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* ✅ borda suave */
+}
+
+/* ✅ Remove COMPLETAMENTE as imagens */
+
+.card-mariano {
+  background-image: none !important;
+}
+
+/* Efeito hover */
+
+.card-mariano:hover{
+  transform: translateY(-10px);
+  background: rgba(93, 93, 93, 0.15);
+}
+
+
+.video-mariano{
+  display: flex;
+}
+
+
+.botton-mariano{
+  margin-top: 180px;
+  margin-left: 300px;
+}
+
+
+
+.video-yt {
+  background: #ffcc00;
+  color: #ffffff;
+  padding: 9px 25px;
+  border: none;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+  margin-top: 20px;
+}
+
+.video-yt:hover {
+  background: #e3a100;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+}
+
+.video-yt:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  text-decoration: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+}
+
+
+
+.icon-play{
+ width: 50px;
+  height: auto;
+  margin-bottom: 15px; 
+  
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   ✅ FOOTER — CORRIGIDO
+========================== */
+.footer {
+  background: #0e0e0e url('pattern.png');
+  color: #ccc;
+  padding: 50px 0;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ✅ CORREÇÃO REAL — AGORA É FLEX E FICA HORIZONTAL */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+  /* mantém responsivo */
+
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-section h4 {
+  color: #f2b200;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f2b200;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: #f2b200;
+}
+
+.logo-footer {
+  width: 200px;
+  margin-bottom: 1px;
+}
+
+
+
+
+/* ✅ RESPONSIVO DO FOOTER AJUSTADO */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
