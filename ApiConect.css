@@ -892,64 +892,6 @@ color: #FFBF00;
 }
 
 
-
-
-/* ✅ RESPONSIVO DO FOOTER AJUSTADO */
-@media (max-width: 900px) {
-  .footer-container {
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 600px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-/* =======================
-   RESPONSIVIDADE
-======================= */
-
-/* Tablets (largura menor que 1024px) */
-@media (max-width: 1024px) {
-  .nav-row {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero-text {
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  img, video {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-/* Celulares (menor que 768px) */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .content-section {
-    padding: 20px;
-  }
-
-  h1, h2 {
-    font-size: 1.2rem;
-  }
-
-  .btn {
-    padding: 10px 20px;
-    font-size: 1rem;
-  }
-}
-
 /* ==========================
    🌐 ACESSIBILIDADE TOTAL — MOBILE E PC
    (adicione no final do arquivo)
@@ -1082,3 +1024,4 @@ img, video {
     min-width: 100%;
   }
 }
+
