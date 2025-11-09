@@ -949,3 +949,136 @@ color: #FFBF00;
     font-size: 1rem;
   }
 }
+
+/* ==========================
+   🌐 ACESSIBILIDADE TOTAL — MOBILE E PC
+   (adicione no final do arquivo)
+========================== */
+
+/* Garante que o site se ajuste automaticamente à tela */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden; /* impede que o conteúdo “vaze” da tela */
+}
+
+/* Imagens e vídeos nunca ultrapassam o tamanho da tela */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Telas médias (tablets até 1024px) */
+@media (max-width: 1024px) {
+  .nav-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .linha-horizontal {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .carousel-container {
+    width: 100%;
+  }
+
+  .card-1, .card-2, .card-mariano {
+    width: 80%;
+    height: auto;
+  }
+
+  .video-mariano {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botton-mariano {
+    margin: 40px 0 0 0;
+  }
+
+  .footer-container {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+
+/* Telas pequenas (celulares até 768px) */
+@media (max-width: 768px) {
+  header, nav, footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p, li, a, button {
+    font-size: 1rem;
+  }
+
+  .linha-botao-hex {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .img-vdo {
+    height: 260px;
+    margin: 100px 0;
+  }
+
+  .texto-carrussel, .Apicultura-italia {
+    max-width: 95%;
+    text-align: center;
+  }
+
+  .card-1, .card-2, .card-mariano {
+    width: 90%;
+    height: auto;
+  }
+
+  .carousel-container {
+    max-width: 100%;
+  }
+}
+
+/* Celulares muito pequenos (até 480px) */
+@media (max-width: 480px) {
+  .cabecalho h1 {
+    font-size: 1.6rem;
+  }
+
+  .logo img {
+    width: 85px;
+  }
+
+  .saiba-mais, .saiba-produtor, .saiba-vender, .video-yt {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .footer-section {
+    min-width: 100%;
+  }
+}
